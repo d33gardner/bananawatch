@@ -25,8 +25,9 @@ export default function DashboardPage() {
           return;
         }
         const map: Record<string, PatientRow> = {};
-        (data ?? []).forEach((row) => {
-          map[row.id] = row as PatientRow;
+        const rows = (data ?? []) as PatientRow[];
+        rows.forEach((row) => {
+          map[row.id] = row;
         });
         setPatientsMap(map);
       });
