@@ -1,0 +1,17 @@
+{
+  "name": "bananawatch",
+  "private": true,
+  "scripts": {
+    "mobile": "pnpm --filter @bananawatch/mobile start",
+    "web": "pnpm --filter @bananawatch/web dev"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "19.1.0",
+      "react-dom": "19.1.0"
+    }
+  }
+}

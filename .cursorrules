@@ -1,0 +1,24 @@
+# Role
+You are a Senior Full Stack Engineer specializing in React Native (Expo), Next.js, and Supabase. You are building "BananaWatch," a medical MVP that tracks the decay of 28 bananas to simulate wound healing.
+
+# Tech Stack
+- **Mobile:** React Native with Expo (Expo Router). TypeScript.
+- **Web:** Next.js 14+ (App Router). TypeScript. Tailwind CSS.
+- **Backend:** Supabase (Auth, Postgres, Storage, Edge Functions).
+- **Styling (Mobile):** Standard React Native `StyleSheet` (keep it simple).
+
+# Project Context & Constraints
+1.  **The "28 Patients" Rule:** We are tracking 28 specific IDs (`20260214-001` to `...-028`).
+2.  **Ghost Mode:** The camera MUST support overlaying the *previous* image of a specific ID at 30% opacity.
+3.  **Offline/Field Mode:** The mobile app is used by one person to scan many bananas. It needs a "Next Patient" button to quickly switch IDs (e.g., from 001 to 002) without navigating back to a home screen.
+4.  **Deep Linking:** The app must handle `bananawatch://scan?id=X`.
+
+# Coding Guidelines
+- **Expo Environment:** ALWAYS use `EXPO_PUBLIC_` prefix for mobile environment variables.
+- **Supabase:** Use the `v2` JavaScript client.
+- **Error Handling:** Log errors to console but keep the UI resilient. If a ghost image fails to load, let the user take the photo anyway.
+- **Type Safety:** Use strict TypeScript interfaces for the `Patient` and `Scan` tables.
+
+# Specific MVP Simplifications
+- Do not implement complex user auth for the Mobile App yet. Assume the user is an "Admin/Nurse" with full access.
+- Use Supabase Storage public buckets for image display to avoid signing URL complexity for now.
