@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Page title: consistent across all pages */
+  .text-page-title {
+    @apply text-2xl font-semibold tracking-tight text-stone-900;
+  }
+  .text-section-title {
+    @apply text-lg font-medium text-stone-800;
+  }
+  .text-muted {
+    @apply text-sm text-stone-600;
+  }
+}

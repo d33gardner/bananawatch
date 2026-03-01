@@ -7,7 +7,9 @@
   "exports": {
     ".": "./src/index.ts"
   },
-  "scripts": {},
+  "scripts": {
+    "gen": "npx supabase gen types typescript --project-id cnxxinoqgegxhwnywbfq --schema public > src/database.types.ts"
+  },
   "devDependencies": {
     "typescript": "^5.3.0"
   }

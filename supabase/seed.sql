@@ -80,3 +80,6 @@ VALUES
   ('20260214-027', 'active', 0.15),
   ('20260214-028', 'active', 0.10)
 ON CONFLICT (id) DO UPDATE SET decay_score = EXCLUDED.decay_score;
+
+-- Add questionnaire_response if not present (survey form answers)
+ALTER TABLE public.patients ADD COLUMN IF NOT EXISTS questionnaire_response jsonb;

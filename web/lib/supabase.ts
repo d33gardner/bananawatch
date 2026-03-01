@@ -1,11 +1,3 @@
-import { createClient as createSupabaseClient } from "@supabase/supabase-js";
-import type { Database } from "@bananawatch/types";
-
-export function createClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) {
-    throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY");
-  }
-  return createSupabaseClient<Database>(url, key);
-}
+// Re-export browser client so client components get session from cookies.
+// Survey works as anon when not logged in; dashboard/add-patient require login.
+export { createClient } from "./supabase/client";
